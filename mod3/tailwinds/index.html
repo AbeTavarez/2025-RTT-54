@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Acme Inc | Home</title>
+  </head>
+
+  <body class="bg-sky-500 md:bg-red-600 lg:bg-slate-700 p-5 text-white">
+    <!-- <nav class="border p-2 flex">
+      <h1 class="text-xl font-bold md:text-3xl">Acme inc</h1>
+
+      <div class="ml-auto">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </div>
+    </nav> -->
+
+    <div class="bg-gray-800 p-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="#" class="text-white font-bold text-xl">MyLogo</a>
+
+        <nav
+          class="hidden sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-row space-x-4"
+        >
+          <a href="#" class="text-gray-300 hover:text-white">Home</a>
+          <a href="#" class="text-gray-300 hover:text-white">About</a>
+          <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+        </nav>
+        
+        <div class="sm:hidden">Menu</div>
+      </div>
+    </div>
+
+    <div
+      class="mt-10 py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 sm:bg-red-500"
+    >
+      <img
+        class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
+        src="https://uploads.codesandbox.io/uploads/user/0b26283e-9aa6-444a-bf48-51b35aa5bc02/Zuys-erin-lindford.jpg"
+        alt="Woman's Face"
+      />
+      <div class="text-center space-y-2 sm:text-left">
+        <div class="space-y-0.5">
+          <p class="text-lg text-black font-semibold">Erin Lindford</p>
+          <p class="text-slate-500 font-medium">Product Engineer</p>
+        </div>
+        <button
+          class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+        >
+          Message
+        </button>
+      </div>
+    </div>
+
+    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-10">
+      This text changes size based on the screen width.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Task Manager App</h1>
+
+    <div>
+      <!-- Task Name  -->
+      <input type="text" id="task-name" placeholder="task name..." />
+
+      <!-- Categories  -->
+      <select id="category">
+        <option disabled selected>Categories</option>
+        <option value="school">School</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+
+      <!-- Deadline  -->
+      <input type="date" name="" id="deadline" />
+
+      <!-- Status  -->
+      <select id="status" value="pending">
+        <option disabled selected>Status</option>
+        <option value="pending">Pending</option>
+        <option value="inprogress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <!-- Add Task Button  -->
+      <button id="add-task-btn">Add Task</button>
+    </div>
+
+    <div>
+      <h2>Filter Tasks</h2>
+      <select>
+        <option disabled selected>Filter by Status</option>
+        <option value="pending">Pending</option>
+        <option value="inprogress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <select>
+        <option disabled selected>Filter by Categories</option>
+        <option value="school">School</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+    </div>
+
+    <ul id="task-list">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+    </ul>
+
+  </body>
+</html>

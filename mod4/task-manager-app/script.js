@@ -34,4 +34,9 @@ function addTask() {
 
     tasks.push(newTask);
     console.log(tasks);
+    displayTasks()
+}
+
+function displayTasks() {
+    
 }

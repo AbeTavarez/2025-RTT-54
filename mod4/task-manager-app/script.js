@@ -38,5 +38,22 @@ function addTask() {
 }
 
 function displayTasks() {
-    
+    // Clear the task list
+    while(taskListUl.firstChild) {
+        taskListUl.removeChild(taskListUl.firstChild);
+    }
+
+    // Add the tasks to the task list
+    // for each task object in the tasks array, do the following:
+    tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = `${task.taskName.toUpperCase()} - ${task.deadline}`;
+
+        // const selectCategory = categoryInput.cloneNode(true);
+        const selectStatus = statusInput.cloneNode(true)
+
+        // li.appendChild(selectCategory);
+        li.appendChild(selectStatus);
+        taskListUl.appendChild(li);
+    });
 }

@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 800px;
+}
+
+input:required {
+  border-left: 5px solid orange;
+}
+ 
+input:user-invalid {
+  border-left: 5px solid red;
+  background-color: #ffe0e0;
+}
+ 
+input:valid {
+  border-left: 5px solid green;
+}
+ 
+input:focus:invalid {
+  outline: none; /* Avoid double indication of error */
+}
+ 
+/* Styling error messages (often shown via JavaScript) */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

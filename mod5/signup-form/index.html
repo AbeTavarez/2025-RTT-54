@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- novalidate to disable default browser error bubbles, allowing us to use custom messages in <span> elements. -->
+    <form class="container-signup-form" novalidate>
+      <h2>Create Account</h2>
+
+      <div class="form-group-signup">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username"/>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" name="confirm-password" id="confirm-password" />
+
+        <span class="error"></span>
+
+        <input type="submit" value="Sign Up" class="signup-button" />
+      </div>
+    </form>
+  </body>
+</html>

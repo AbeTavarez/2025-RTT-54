@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js" defer></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+   <!-- <script src="script.js" defer></script> -->
+   <script src="main.js" defer></script>
+  <title>Interactive Registration Form</title>
 </head>
 <body>
-    <h1>Browser Storage</h1>
-
-    <input type="text" id="password">
-
-
+  <div class="container">
+    <h1>Register</h1>
+    <form id="registrationForm" novalidate>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" minlength="3" required>
+        <span class="error-message" id="usernameError"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="emailError"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <small>Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number.</small>
+        <span class="error-message" id="passwordError"></span>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span class="error-message" id="confirmPasswordError"></span>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+ 
 </body>
 </html>

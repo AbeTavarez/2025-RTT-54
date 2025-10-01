@@ -15,3 +15,22 @@ function greetUser(name: string, greeting: string = 'Hello') {
 
 console.log(greetUser('John'));
 console.log(greetUser('John', 'Whats up'));
+
+
+
+function formatInput(input: string): string;
+function formatInput(input: string[]): string;
+
+
+function formatInput(input: string | string[]) {
+    if (typeof input === 'string'){
+        return input.toUpperCase();
+    } else {
+        return input.join(', ').toUpperCase()
+    }
+}
+
+console.log(formatInput('hello world'));
+
+console.log(formatInput(["apple", "banana"]));
+

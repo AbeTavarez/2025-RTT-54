@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,21 +10,20 @@
     <h1>Calculator App</h1>
     <div id="result"></div>
     <div>
-      <input type="number" id="input-1"/>
-      <input type="number" id="input-2"/>
+      <div>
+        <label for="input-1">Num 1</label>
+        <input type="number" id="input-1" name="input-1" />
+        <label for="input-2" name="input-2">Num 1</label>
+        <input type="number" id="input-2" />
+      </div>
 
       <div>
         <button id="add">+</button>
-        <button>-</button>
-        <button>/</button>
-        <button>*</button>
+        <button id="subtract">-</button>
+        <button id="divide">/</button>
+        <button id="multiply">*</button>
       </div>
-    
     </div>
-
-
-
-
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,18 +1,24 @@
 const input1 = document.getElementById('input-1') as HTMLInputElement;
 const input2 = document.getElementById('input-2') as HTMLInputElement;
 const addBtn = document.getElementById('add') as HTMLButtonElement;
+const subtractBtn = document.getElementById('subtract') as HTMLButtonElement;
+const divideBtn = document.getElementById('divide') as HTMLButtonElement;
+const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
 const resultDiv = document.getElementById('result') as HTMLDivElement;
 
-let num1: number;
-let num2 : number;
-let newResult: number;
+// Todo: add button
+addBtn?.addEventListener('click', (e: PointerEvent) => {
+  const num1 = Number(input1?.value);
+  const num2 = Number(input2?.value);
+  const result = add(num1, num2);
+  resultDiv.innerHTML = `Result: ${result}`
+});
 
-addBtn?.addEventListener('click', (e) => {
-  num1 = Number(input1?.value);
-  num2 = Number(input2?.value);
-  newResult = add(num1, num2);
-  resultDiv.innerHTML = `Result: ${newResult}`
-})
+// Todo: subtract button
+
+// Todo: divide button
+
+// Todo: multiply button
 
 function add(a: number = 0, b: number = 0): number {
   return a + b;
@@ -20,7 +26,6 @@ function add(a: number = 0, b: number = 0): number {
 
 function divide(a: number, b: number = 1): number | null {
   // return b === 0 ?  null : a / b;
-  
   if (b === 0) {
     return null;
   } else {

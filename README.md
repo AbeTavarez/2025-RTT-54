@@ -3,6 +3,8 @@
 ## Description
 Cohort repo for 2025-RTT-54
 
+## CDNs
+ - [JSDelivr](https://www.jsdelivr.com/)
 
 
 ## Common Bash Commands

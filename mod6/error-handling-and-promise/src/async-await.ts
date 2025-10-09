@@ -37,8 +37,8 @@ async function fetchComments() {
 }
 
 try {
-    // const comments = await fetchComments();
-    // comments.forEach(comment => console.log(comment.body))
+    const comments = await fetchComments();
+    comments.forEach(comment => console.log(comment.body))
 } catch (error) {
     console.error(error)
 }

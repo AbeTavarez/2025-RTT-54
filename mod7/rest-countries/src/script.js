@@ -19,9 +19,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     cardTemplate.style.display = 'block'
 
     cardTemplate.firstElementChild.src = country.flags.png;
-    cardTemplate.firstElementChild.nextElementSibling.textContent = country.name.common
+    cardTemplate.firstElementChild.nextElementSibling.textContent = country.name.common;
 
-    countriesDiv.appendChild(cardTemplateClone)
+
+    const anchor = document.createElement('a');
+    anchor.href = './src/pages/details.html'
+    anchor.appendChild(cardTemplateClone)
+
+    countriesDiv.appendChild(anchor)
     
   })
 });

@@ -40,15 +40,19 @@
       </select>
     </div>
 
-    <div id="card-template" style="display: none">
-        <img src="" alt="" />
-        <h2>Name</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-    </div>
+    <template id="card-template">
+      <div id="card">
+        <a href="">
+          <img src="" alt="" />
+          <h2></h2>
+          <ul>
+            <li id="population"></li>
+            <li id="region"></li>
+            <li id="capital"></li>
+          </ul>
+        </a>
+      </div>
+    </template>
 
     <div id="countries"></div>
   </body>

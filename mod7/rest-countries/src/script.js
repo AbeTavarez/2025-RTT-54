@@ -14,19 +14,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log(data);
 
   data.forEach(country => {
-    const  cardTemplateClone = cardTemplate.cloneNode(true);
-    // console.log(cardTemplate);
-    cardTemplate.style.display = 'block'
+    console.log(Array.isArray(country.capital));
+    
+    // Clone the card template
+    const  cardTemplateClone = cardTemplate.content.cloneNode(true);
 
-    cardTemplate.firstElementChild.src = country.flags.png;
-    cardTemplate.firstElementChild.nextElementSibling.textContent = country.name.common;
+    // add the page path to the href
+    cardTemplateClone.querySelector('a').href = './src/pages/details.html?name=' + country.name.common;
 
+    // add the source and alt text to the image
+    cardTemplateClone.querySelector('img').src = country.flags.png;
+    cardTemplateClone.querySelector('img').alt = country.name.common;
+    
+    // add country name to the h2
+    cardTemplateClone.querySelector('h2').textContent = country.name.common;
+    
+    // add population
+    cardTemplateClone.querySelector('#population').textContent = `Population: ${country.population}`;
 
-    const anchor = document.createElement('a');
-    anchor.href = './src/pages/details.html'
-    anchor.appendChild(cardTemplateClone)
+    // add region
+    cardTemplateClone.querySelector('#region').textContent = `Region: ${country.region}`
 
-    countriesDiv.appendChild(anchor)
+    // add capital
+    cardTemplateClone.querySelector('#capital').textContent = `Capital: ${country.capital}`;
+    
+    countriesDiv.appendChild(cardTemplateClone)
     
   })
 });

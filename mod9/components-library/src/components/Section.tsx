@@ -9,7 +9,7 @@ interface SectionProps {
 function Section({title, children}: SectionProps) {
     return (
         <section className="p-5">
-            <h2 className="mb-5">{title}</h2>
+            <h2 className="mb-5 text-2xl">{title}</h2>
             {children}
         </section>
     )

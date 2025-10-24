@@ -10,7 +10,7 @@ function App() {
   name: 'John Doe',
   email: 'john.doe@example.com',
   role: 'Software Engineer',
-  avatarUrl: 'https://example.com/avatar.jpg'
+  avatarUrl: 'https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png'
 };
   return (
     <main className='bg-stone-900 text-white h-full p-5'>
@@ -29,7 +29,7 @@ function App() {
 
 
       <Section title="Buttons">
-        <div className='grid grid-cols-4'>
+        <div className='grid grid-cols-4 gap-2'>
 
         <Button text='Click me!'/>
 
@@ -43,6 +43,8 @@ function App() {
       </Section>
 
       <Section title="AlertBox">
+        <div className='grid gap-2'>
+
         <AlertBox type='success' message="Confirmed" onClose={() => alert("Closed")}>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, aut totam quod nulla soluta hic distinctio dignissimos, culpa earum facilis laborum, neque odit doloremque provident repudiandae placeat dolorem adipisci cupiditate!</p>
         </AlertBox>
@@ -58,6 +60,7 @@ function App() {
         <AlertBox type='warning' message="Deleted" onClose={() => alert("Deleted")}>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, aut totam quod nulla soluta hic distinctio dignissimos, culpa earum facilis laborum, neque odit doloremque provident repudiandae placeat dolorem adipisci cupiditate!</p>
         </AlertBox>
+        </div>
       </Section>
 
 

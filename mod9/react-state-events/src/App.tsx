@@ -1,5 +1,6 @@
 
 import Counter from './components/Counter';
+import Todos from './components/Todos';
 import './App.css'
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
       <h1>React State & Events</h1>
 
       <Counter />
+
+      <hr />
+      
+      <Todos />
     </div>
   )
 }

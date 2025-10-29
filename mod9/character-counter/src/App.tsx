@@ -13,6 +13,7 @@ function App() {
   return (
     <div>
       <h1>Character Counter App</h1>
+      <CharacterCounter />
 
       {/* <ColorPicker />
       
@@ -23,7 +24,6 @@ function App() {
       <hr />
       <ContentSwitcher /> */}
 
-      <CharacterCounter />
     </div>
   )
 }

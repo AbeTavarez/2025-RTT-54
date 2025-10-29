@@ -1,3 +1,4 @@
+import { useState } from "react";
 import StatsDisplay from "./StatsDisplay";
 import TextInput from "./TextInput";
 
@@ -9,13 +10,34 @@ export interface CharacterCounterProps {
 }
 
 function CharacterCounter() {
+  const [text, setText] = useState("");
+
+  const handleChange = (newText: string) => {
+    setText(() => newText);
+  };
+
+  const calculateStats = (text: string) => {
+    // calculate char count
+    const characterCount = text.length;
+    
+    const calculateWordCount = (text: string) =>
+      text.length > 0 ? text.trim().split(/\s+/).length : 0;
+    const wordCount = calculateWordCount(text);
+    const readingTime = wordCount / 200;
+    return {
+      characterCount,
+      wordCount,
+      readingTime,
+    };
+  };
+
   return (
     <div>
-      <h3>Character Count </h3>
+      <h2>Character Count </h2>
 
-      <TextInput />
-
-      <StatsDisplay />
+      <StatsDisplay stats={calculateStats(text)} />
+      <hr />
+      <TextInput onTextChange={handleChange} initialValue={text} />
     </div>
   );
 }

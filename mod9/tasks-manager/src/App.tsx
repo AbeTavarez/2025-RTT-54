@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TaskList, { type Task } from "./components/TaskList";
+import TaskList, { type Task, type TaskStatus } from "./components/TaskList";
 import "./App.css";
 
 function App() {
@@ -49,9 +49,14 @@ function App() {
     },
   ]);
 
+ 
   const onDelete = () => {};
 
-  const onStatusChange = () => {};
+  const onStatusChange = (taskId: string, newStatus: TaskStatus) => {
+    setTasks(prevTasks => prevTasks.map(task => (
+      task.id === taskId ? {...task, status: newStatus}: task
+    )))    
+  };
 
   return (
     <div className="p-5 bg-zinc-900 text-white h-screen">

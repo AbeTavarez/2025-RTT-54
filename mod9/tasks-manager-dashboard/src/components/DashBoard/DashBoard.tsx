@@ -1,7 +1,11 @@
+import type { Task } from "../../types";
 import TaskList from "../TaskList/TaskList";
 
+interface DashBoardProps {
+    tasks: Task[]
+}
 
-function DashBoard() {
+function DashBoard({tasks}: DashBoardProps) {
   return (
     <div>
       <h2 className="text-3xl my-5">DashBoard</h2>
@@ -28,7 +32,7 @@ function DashBoard() {
       </div>
 
         {/* TASKLIST  */}
-        <TaskList />
+        <TaskList tasks={tasks}/>
     </div>
   );
 }

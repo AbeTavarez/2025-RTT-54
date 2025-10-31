@@ -59,8 +59,8 @@ function App() {
   };
 
   return (
-    <div className="p-5 bg-zinc-900 text-white h-screen">
-      <h1 className="text-5xl mb-10">Tasks Manager App</h1>
+    <div className="flex flex-col items-center justify-center bg-zinc-900 text-white h-full">
+      <h1 className="text-5xl my-10">Tasks Manager App</h1>
 
       <TaskList
         tasks={tasks}

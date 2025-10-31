@@ -28,15 +28,15 @@ function TaskFilter({ onFilterChange }: TaskFilterProps) {
   }
 
   return (
-    <div>
-      <select name="status" onChange={handleChange}>
+    <div className="my-10 border p-5 rounded flex gap-10">
+      <select name="status" onChange={handleChange} className="bg-zinc-900">
         <option value=''>All</option>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
         <option value="completed">Completed</option>
       </select>
 
-      <select name="priority" onChange={handleChange}>
+      <select name="priority" onChange={handleChange} className="bg-zinc-900">
         <option value=''>All</option>
         <option value='low'>low</option>
         <option value='medium'>medium</option>

@@ -28,7 +28,10 @@ function TaskList({ tasks, onStatusChange, onDelete }: TaskListProps) {
   const [filteredTasks, setFilteredTasks] = useState<Task[]>(tasks);
   
   //
-  const onFilterChange = (filters) => {
+  const onFilterChange = (filters: {
+    status?: TaskStatus;
+    priority?: "low" | "medium" | "high";
+  }) => {
     console.log(filters);
     
     const results = tasks.filter((task) => {
@@ -45,6 +48,10 @@ function TaskList({ tasks, onStatusChange, onDelete }: TaskListProps) {
       if (filters.priority) {
         return task.priority === filters.priority;
       }
+
+      if (!filters.status && !filters.priority) {
+        return true;
+      }
     });
 
     console.log(results);
@@ -54,8 +61,8 @@ function TaskList({ tasks, onStatusChange, onDelete }: TaskListProps) {
   
 
   return (
-    <div>
-      <h2 className="text-4xl mb-10">Task List</h2>
+    <div className="w-[50%] h-full">
+      {/* <h2 className="text-4xl mb-10">Task List</h2> */}
 
       <TaskFilter onFilterChange={onFilterChange}/>
 

@@ -8,21 +8,31 @@ function PostFetcher() {
 
   // fetch a post from API
   useEffect(() => {
-    console.log(`Fetching data...`);
-    setLoading(true);
-
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-      .then((response) => {
+    
+    const fetchPost = async () => {
+      try {
+        setLoading(true);
+        setError("");
+        // fetch data
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+        
         if (!response.ok) {
-          throw new Error("Error fetching post");
+          throw new Error("Sorry try again! Error fetching data");
         }
-        return response.json();
-      })
-      .then((data) => {
+        
+        const data = await response.json();
         setPost(data);
-      })
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+      } catch (error) {
+        // catch error
+        console.error(error)
+        setError(error.message);
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    // TODO: call the function
+    fetchPost()
 
   }, [postId]);
 
@@ -45,3 +55,23 @@ function PostFetcher() {
 }
 
 export default PostFetcher;
+
+
+// useEffect(() => {
+//     console.log(`Fetching data...`);
+//     setLoading(true);
+
+//     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Error fetching post");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         setPost(data);
+//       })
+//       .catch((e) => setError(e.message))
+//       .finally(() => setLoading(false));
+
+//   }, [postId]);

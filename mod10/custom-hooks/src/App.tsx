@@ -3,6 +3,7 @@ import useFetchData from "./hooks/useFetchData";
 import useForm from "./hooks/useForm";
 import "./App.css";
 import DebounceSearchDemo from "./components/DebounceSearchDemo";
+import PaginationDemo from "./components/PaginationDemo";
 
 function App() {
   const [storedValue, setStoredValue] = useLocalStorage("username", "Abe");
@@ -22,6 +23,8 @@ function App() {
       <h1>Custom Hooks</h1>
       <DebounceSearchDemo />
       <hr />
+
+      <PaginationDemo />
 
       <div>
         <h2>Sign In Form</h2>

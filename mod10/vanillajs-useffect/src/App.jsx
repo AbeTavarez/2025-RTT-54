@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   useDocumentTitle('React Custom Hooks');
+  
   const windowSize = useWindowSize();
   console.log(`APP: ${windowSize.width}: ${windowSize.height}`);
   

@@ -7,7 +7,7 @@ interface TaskListProps {
 
 function TaskList({ tasks }: TaskListProps) {
   return (
-    <div className=" my-5">
+    <div className="h-screen my-5">
       <h2 className="text-3xl my-5">Task List</h2>
 
       <div className="flex flex-col gap-5">

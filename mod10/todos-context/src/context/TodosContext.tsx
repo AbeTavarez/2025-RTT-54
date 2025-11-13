@@ -28,7 +28,22 @@ const data = [
   },
 ];
 
-export const TodosContext = createContext(null);
+interface TodosContextType {
+    todos: Todo[];
+    addTodo: (text: string) => void;
+    deleteTodo: (id: string) => void;
+    toggleTodo: (id: string) => void;
+    editTodo: (id: string, newText: string) => void;
+    clearCompleted: () => void;
+}
+
+interface Todo {
+    id: string;
+    text: string;
+    completed: boolean;
+}
+
+export const TodosContext = createContext<TodosContextType | null>(null);
 
 
 interface TodosProviderProps {
@@ -38,7 +53,7 @@ interface TodosProviderProps {
 export function TodosProvider({children}: TodosProviderProps) {
     // State data
     // TODO: Read stored todos from localstorage
-    const [todos, setTodos] = useState(data);
+    const [todos, setTodos] = useState<Todo[]>(data);
 
     // TODO: Store todos when the todos array changes
     useEffect(() => {}, []);

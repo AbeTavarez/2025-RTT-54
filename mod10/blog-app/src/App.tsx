@@ -8,6 +8,7 @@ import AdminPage from './pages/AdminPage';
 
 import './App.css'
 import Navbar from './components/Navbar';
+import type { Blog } from './types';
 
 const data = [
   {
@@ -34,7 +35,7 @@ const data = [
 ];
 
 function App() {
-  const [blogs, setBlogs] = useState(data);
+  const [blogs, setBlogs] = useState<Blog[]>(data);
 
   return (
     <>

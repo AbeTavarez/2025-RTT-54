@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
+import type { Blog } from "../types";
 
 interface BlogDetailsPageProps {
-  blogs: [];
+  blogs: Blog[];
 }
 
 function BlogDetailsPage({ blogs }: BlogDetailsPageProps) {

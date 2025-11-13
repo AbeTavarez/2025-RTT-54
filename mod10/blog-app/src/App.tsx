@@ -2,8 +2,12 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
+import BlogDetailsPage from './pages/BlogDetailsPage';
+import LoginPage from './pages/LoginPage';
+import AdminPage from './pages/AdminPage';
 
 import './App.css'
+import Navbar from './components/Navbar';
 
 const data = [
   {
@@ -34,11 +38,19 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <h1>Blog App</h1>
 
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/blog' element={<BlogPage />} />
+        
+        <Route path='/blog' element={<BlogPage blogs={blogs} />} />
+        
+        <Route path='/login' element={<LoginPage />}/>
+
+        <Route path='/admin' element={<AdminPage />} />
+        
+        <Route path='/blog/:slug' element={<BlogDetailsPage blogs={blogs}/>} />
       </Routes>
     </>
   )

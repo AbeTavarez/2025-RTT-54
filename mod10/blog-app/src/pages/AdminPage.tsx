@@ -3,15 +3,16 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function AdminPage() {
-  const { isAuthenticated } = useContext(AuthContext);
+  // const { isAuthenticated } = useContext(AuthContext);
+  const authCtx = useContext(AuthContext);
   
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated === false) {
+    if (authCtx?.isAuthenticated === false) {
       navigate("/login");
     }
-  }, [isAuthenticated, navigate]);
+  }, [authCtx?.isAuthenticated, navigate]);
 
   return (
     <main>

@@ -14,7 +14,3 @@
 ## Dev Dependencies
 
 - Nodemon
-
-
-## Generate random string
-`openssl rand -hex 32`

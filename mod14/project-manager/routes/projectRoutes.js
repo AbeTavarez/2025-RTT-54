@@ -25,14 +25,47 @@ projectRouter.get("/", async (req, res) => {
  * GET /api/projects/:projectId
  */
 projectRouter.get("/:projectId", async (req, res) => {
-  res.send("sending all projects....");
+  try {
+    const { projectId } = req.params;
+    const project = await Project.findById(projectId);
+
+    if (!project) {
+      return res
+        .status(404)
+        .json({ message: `Project with id: ${projectId} not found!` });
+    }
+
+    // Authorization
+    console.log(req.user._id);
+    console.log(project.user);
+    
+    if (project.user.toString() !== req.user._id) {
+      return res.status(403).json({ message: "User is not authorized!" });
+    }
+
+    res.json(project);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 /**
  * POST /api/projects
  */
 projectRouter.post("/", async (req, res) => {
-  res.send("create project....");
+  try {
+    const newProject = await Project.create({
+      ...req.body,
+      user: req.user._id,
+    });
+
+    res.status(201).json(newProject);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 /**

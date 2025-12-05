@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 // Set up all variables in the .env file
@@ -19,6 +20,7 @@ const app = express();
 // ========= Middlewares =================
 app.use(morgan('dev')); // logger
 app.use(express.json()); // body parser
+app.use(cors({origin: "http://localhost:5173"}));
 require('./config/passport');
 
 // ========= Routes ======================
